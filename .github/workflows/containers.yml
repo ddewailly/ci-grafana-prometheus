@@ -31,10 +31,10 @@ jobs:
         docker build . -t cdg.ocir.io/${{ secrets.TENANCY_NAMESPACE }}/prometheus-sidecar:1.0.0
         docker push -q cdg.ocir.io/${{ secrets.TENANCY_NAMESPACE }}/prometheus-sidecar:1.0.0
     -
-          name: Set up JDK 21
+          name: Set up JDK 26
           uses: actions/setup-java@v4
           with:
-            java-version: '21'
+            java-version: '26'
             distribution: 'temurin'
             cache: maven
     - name: Build with Maven
