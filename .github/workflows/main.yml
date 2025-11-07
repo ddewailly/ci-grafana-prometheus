@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 name: Docker Image CI
+=======
+name: Docker Image CI Java26
+>>>>>>> 52bfc10cddaee3a4a7916ceb1f58f319314b4852
 
 on:
   push:
@@ -30,10 +34,18 @@ jobs:
         cd sidecar
         docker build . -t cdg.ocir.io/${{ secrets.TENANCY_NAMESPACE }}/prometheus-sidecar:1.0.0
         docker push -q cdg.ocir.io/${{ secrets.TENANCY_NAMESPACE }}/prometheus-sidecar:1.0.0
+<<<<<<< HEAD
     - name: Set up JDK 21
           uses: actions/setup-java@v4
           with:
             java-version: '21'
+=======
+    -
+          name: Set up JDK 26
+          uses: actions/setup-java@v4
+          with:
+            java-version: '26'
+>>>>>>> 52bfc10cddaee3a4a7916ceb1f58f319314b4852
             distribution: 'temurin'
             cache: maven
     - name: Build with Maven
